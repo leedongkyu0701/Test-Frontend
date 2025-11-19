@@ -11,7 +11,7 @@ export default function AddProduct() {
     queryKey: ["items", id],
     queryFn: async () => {
       const res = await apiFetch(
-        `http://localhost:8080/shop/products/${id}`,
+        `https://test-br27.onrender.com/shop/products/${id}`,
         {}
       );
       const data = await res.json();
@@ -22,7 +22,7 @@ export default function AddProduct() {
   const { mutate, isError, isLoading, error } = useMutation({
     mutationFn: async (newProduct) => {
       const res = await apiFetch(
-        `http://localhost:8080/shop/products/${id}/edit`,
+        `https://test-br27.onrender.com/shop/products/${id}/edit`,
         {
           method: "PUT",
           body: newProduct,

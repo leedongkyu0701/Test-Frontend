@@ -9,7 +9,7 @@ export default function Login() {
   
   const { mutate, isLoading, isError, error } = useMutation({
     mutationFn: async (loginData) => {
-      const res = await fetch(`http://localhost:8080/auth/login`, {
+      const res = await fetch(`https://test-br27.onrender.com/auth/login`, {
         method: "POST",
         body: loginData,
         credentials: "include", // 쿠키 전송을 위해 추가

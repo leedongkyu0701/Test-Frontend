@@ -7,7 +7,7 @@ export default function SignUp() {
     
   const { mutate, isLoading , isError, error} = useMutation({
     mutationFn: async (userData) => {
-      const res = await fetch(`http://localhost:8080/auth/signup`, {
+      const res = await fetch(`https://test-br27.onrender.com/auth/signup`, {
         method: "POST",
         body: userData,
       });

@@ -17,7 +17,7 @@ export default function ItemDetail({ item, onClose }) {
 
   const { mutate: updateCartMutate } = useMutation({
     mutationFn: async ({ item, method }) => {
-      const response = await apiFetch(`http://localhost:8080/shop/cart`, {
+      const response = await apiFetch(`https://test-br27.onrender.com/shop/cart`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function ItemDetail({ item, onClose }) {
 
   const { mutate: deleteToCartAllMutate } = useMutation({
     mutationFn: async (itemId) => {
-      const response = await apiFetch(`http://localhost:8080/shop/cart`, {
+      const response = await apiFetch(`https://test-br27.onrender.com/shop/cart`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

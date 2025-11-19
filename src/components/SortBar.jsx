@@ -10,7 +10,7 @@ export default function SortBar() {
     queryKey: ["items-sort", page],
     queryFn: async () => {
       const res = await apiFetch(
-        `http://localhost:8080/shop/products/?page=${page}&perPage=2`,
+        `https://test-br27.onrender.com/shop/products/?page=${page}&perPage=2`,
         {}
       );
       if (!res.ok) throw new Error("상품 정보를 불러오지 못했습니다.");

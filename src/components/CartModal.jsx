@@ -17,7 +17,7 @@ export default function CartModal({ onClose }) {
  useQuery({
     queryKey: ['cart'],
     queryFn: async() => {
-      const res = await apiFetch("http://localhost:8080/shop/cart", );
+      const res = await apiFetch("https://test-br27.onrender.com/shop/cart", );
       const data = await res.json();
       if(!res.ok){
         throw new Error("장바구니 정보를 불러오는 데 실패했습니다.");

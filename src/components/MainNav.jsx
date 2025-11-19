@@ -17,7 +17,7 @@ export default function MainNav() {
   const isLoggedIn = useSelector((state) => state.ui.isLoggedIn);
 
   async function logoutHandler() {
-    const res = await apiFetch("http://localhost:8080/auth/logout", {
+    const res = await apiFetch("https://test-br27.onrender.com/auth/logout", {
       method: "POST",
     });
     const data = await res.json();

@@ -63,7 +63,7 @@ export default function ProductsList() {
     queryKey: ["items", page],
     queryFn: async () => {
       const res = await apiFetch(
-        `http://localhost:8080/shop/products/?page=${page}&perPage=${perPage}`
+        `https://test-br27.onrender.com/shop/products/?page=${page}&perPage=${perPage}`
       ); // 백엔드에서 데이터 받아오기
       const data = await res.json();
       // console.log(data);

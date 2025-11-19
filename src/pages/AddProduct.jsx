@@ -9,7 +9,7 @@ export default function AddProduct() {
 
   const { mutate, isError, isLoading, error } = useMutation({
     mutationFn: async (newProduct) => {
-      const res = await apiFetch("http://localhost:8080/shop/products", {
+      const res = await apiFetch("https://test-br27.onrender.com/shop/products", {
         method: "POST",
         body: newProduct,
       });

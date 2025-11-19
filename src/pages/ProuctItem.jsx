@@ -16,7 +16,7 @@ export default function ProductItem() {
 
   const { mutate } = useMutation({
     mutationFn: async ({ item, quantity }) => {
-      const response = await apiFetch(`http://localhost:8080/shop/cart`, {
+      const response = await apiFetch(`https://test-br27.onrender.com/shop/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function ProductItem() {
   const { data, isError, isLoading } = useQuery({
     queryKey: ["items", id],
     queryFn: async () => {
-      const res = await apiFetch("http://localhost:8080/shop/products/" + id, {
+      const res = await apiFetch("https://test-br27.onrender.com/shop/products/" + id, {
       });
       const item = await res.json();
       //  console.log(item);
