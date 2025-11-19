@@ -39,7 +39,7 @@ useEffect(() => {
 
   async function verifyAuth() {
     try {
-      const res = await fetch("http://localhost:8080/auth/refresh-token", {
+      const res = await fetch("https://test-br27.onrender.com/auth/refresh-token", {
         method: "POST",
         credentials: "include", // refreshToken 쿠키 전송 필수
       });
