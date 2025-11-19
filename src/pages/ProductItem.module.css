@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.details {
+  text-align: center;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quantityControl button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantityControl button:hover {
+  background-color: #005fcc;
+}
+
+.quantity {
+  font-size: 1.2rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+.info {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.buttons button {
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.buttons button:hover {
+  background-color: #444;
+}
+
+.paymentLink button {
+  background-color: #28a745;
+}
+
+.paymentLink button:hover {
+  background-color: #1e7e34;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}

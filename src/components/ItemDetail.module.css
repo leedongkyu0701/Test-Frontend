@@ -1,0 +1,119 @@
+/* 1. 기본 점 (비어있는 점) 스타일 */
+.selectionDot {
+  width: 20px; /* 점의 크기 */
+  height: 20px;
+  border-radius: 50%; /* 원형 */
+  border: 2px solid #ccc; /* 회색 테두리 */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* 2. 선택된 점 (초록색 점) 스타일 */
+.selected {
+  background-color: #4caf50; /* 초록색 배경 채우기 */
+  border-color: #4caf50; /* 초록색 테두리 */
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  position: relative; /* X 버튼 위치 기준 */
+  gap: 0.8rem;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* 수량 컨트롤 */
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.quantityControl button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantityControl button:hover {
+  background-color: #005fcc;
+}
+
+.quantity {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* 주문 / X 버튼 */
+.buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.orderBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.orderBtn:hover {
+  background-color: #1e7e34;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.deleteBtn:hover {
+  color: red;
+}

@@ -1,0 +1,119 @@
+/* 1. 기본 점 (비어있는 점) 스타일 */
+.selectionDot {
+  width: 20px; /* 점의 크기 */
+  height: 20px;
+  border-radius: 50%; /* 원형 */
+  border: 2px solid #ccc; /* 회색 테두리 */
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* 2. 선택된 점 (초록색 점) 스타일 */
+.selected {
+  background-color: #4caf50; /* 초록색 배경 채우기 */
+  border-color: #4caf50; /* 초록색 테두리 */
+}
+
+/* 모달 dialog 전체 */
+.dialog {
+  width: 90%;
+  max-width: 500px;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+}
+
+/* 제목 */
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* 장바구니 리스트 */
+.list {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* 각 아이템 */
+.item {
+  position: relative; /* X 버튼 기준 */
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* X 버튼 */
+.removeBtn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.removeBtn:hover {
+  color: red;
+}
+
+/* 총 금액 */
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+/* 버튼 그룹 */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* 결제 버튼 */
+.paymentBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.paymentBtn:hover:enabled {
+  background-color: #1e7e34;
+}
+
+/* 닫기 버튼 */
+.closeBtn {
+  background-color: #ccc;
+  color: #222;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: #999;
+}

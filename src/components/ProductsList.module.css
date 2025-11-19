@@ -1,0 +1,73 @@
+/* Products.module.css */
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.productItem {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.productItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.productItem img {
+  max-width: 100%;
+  max-height: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.productItem h2 {
+  font-size: 1rem;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.productItem p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #0070f3;
+}
+
+.editLink {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #f0ad4e;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.editLink:hover {
+  background-color: #ec971f;
+}
+
+.deleteLink {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.deleteLink:hover {
+  background-color: #c9302c;
+} 
