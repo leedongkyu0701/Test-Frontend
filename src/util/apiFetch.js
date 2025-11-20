@@ -18,7 +18,7 @@ export async function apiFetch(url, options = {}) {
 
   if (res.status === 401) {
     console.log("엑세스 토큰 만료로 401 응답 받음, 갱신 시도");
-    const refreshRes = await fetch("http://localhost:8080/auth/refresh-token", {
+    const refreshRes = await fetch("https://test-br27.onrender.com/auth/refresh-token", {
       method: "POST",
       credentials: "include",
     });

@@ -82,7 +82,7 @@ export default function ItemDetail({ item, onClose }) {
         }} // 🔽 클릭 이벤트 추가
       />
       <img
-        src={`http://localhost:8080/${item.imageUrl}`}
+        src={item.imageUrl}
         alt={item.title}
         className={styles.image}
       />

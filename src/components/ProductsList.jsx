@@ -101,7 +101,7 @@ export default function ProductsList() {
           <li key={item._id} className={styles.productItem}>
             <Link to={`/products/${item._id}`}>
               <img
-                src={`http://localhost:8080/${item.imageUrl}`}
+                src={item.imageUrl}
                 alt={item.title}
               />
               <h2>{item.title}</h2>

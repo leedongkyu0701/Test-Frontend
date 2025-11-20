@@ -73,7 +73,7 @@ export default function ProductItem() {
   return (
     <div className={classes.container}>
       <img
-        src={`http://localhost:8080/${data.imageUrl}`}
+        src={data.imageUrl}
         alt={data.title}
         className={classes.image}
       />
