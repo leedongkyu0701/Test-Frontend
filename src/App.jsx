@@ -37,15 +37,12 @@ function App() {
 
     async function verifyAuth() {
       try {
-        // const res = await fetch("https://test-br27.onrender.com/auth/refresh-token", {
-        //   method: "POST",
-        //   credentials: "include", // refreshToken 쿠키 전송 필수
-        // 프록시 후
-        const res = await fetch("/api/auth/refresh-token", {
-          credentials: "include",
+        const res = await fetch("https://test-br27.onrender.com/auth/refresh-token", {
           method: "POST",
+          credentials: "include", // refreshToken 쿠키 전송 필수
+          
         });
-
+       
         if (res.ok) {
           const data = await res.json();
           // 새 accessToken을 Redux에 저장
