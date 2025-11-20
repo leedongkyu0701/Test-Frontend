@@ -14,7 +14,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { uiActions } from "./store/REDUX/ui.js";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,39 +31,42 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-    
   const dispatch = useDispatch();
-useEffect(() => {
-  console.log("페이지 로드 - 인증 상태 확인 시작");
+  useEffect(() => {
+    console.log("페이지 로드 - 인증 상태 확인 시작");
 
-  async function verifyAuth() {
-    try {
-      const res = await fetch("https://test-br27.onrender.com/auth/refresh-token", {
-        method: "POST",
-        credentials: "include", // refreshToken 쿠키 전송 필수
-      });
+    async function verifyAuth() {
+      try {
+        // const res = await fetch("https://test-br27.onrender.com/auth/refresh-token", {
+        //   method: "POST",
+        //   credentials: "include", // refreshToken 쿠키 전송 필수
+        // 프록시 후
+        const res = await fetch("/api/auth/refresh-token", {
+          credentials: "include",
+          method: "POST",
+        });
 
-      if (res.ok) {
-        const data = await res.json();
-        // 새 accessToken을 Redux에 저장
-        dispatch(uiActions.setAccessToken(data.accessToken));
-        dispatch(uiActions.setIsLoggedIn(true));
-        console.log("로그인 상태 복구 성공");
-      } else {
-        // refreshToken도 만료됐거나 없으면 로그아웃 상태
+        if (res.ok) {
+          const data = await res.json();
+          // 새 accessToken을 Redux에 저장
+          dispatch(uiActions.setAccessToken(data.accessToken));
+          dispatch(uiActions.setIsLoggedIn(true));
+          console.log("로그인 상태 복구 성공");
+        } else {
+          // refreshToken도 만료됐거나 없으면 로그아웃 상태
+          dispatch(uiActions.setIsLoggedIn(false));
+          dispatch(uiActions.setAccessToken(null));
+          console.log("로그인 상태 없음");
+        }
+      } catch (err) {
+        console.error("인증 확인 실패", err);
         dispatch(uiActions.setIsLoggedIn(false));
         dispatch(uiActions.setAccessToken(null));
-        console.log("로그인 상태 없음");
       }
-    } catch (err) {
-      console.error("인증 확인 실패", err);
-      dispatch(uiActions.setIsLoggedIn(false));
-      dispatch(uiActions.setAccessToken(null));
     }
-  }
 
-  verifyAuth();
-}, [dispatch]); // dispatch만 의존성에 넣기
+    verifyAuth();
+  }, [dispatch]); // dispatch만 의존성에 넣기
 
   return <RouterProvider router={router}></RouterProvider>;
 }
